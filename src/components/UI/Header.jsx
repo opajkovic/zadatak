@@ -10,7 +10,7 @@ const Header = () => {
   }
 
   const navigateAddHandler = () => {
-    navigate('/items/add')
+    navigate('/products/add')
   }
     return (
         <header className={classes.header}>
