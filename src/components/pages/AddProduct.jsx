@@ -3,7 +3,6 @@ import { useNavigate } from 'react-router-dom';
 import useInput from '../hooks/useInput';
 import classes from './AddProduct.module.css';
 import { ProductContext } from '../../store/product-context';
-import image from '../../assets/images/default.jpg';
 
 const isNotEmpty = (value) => value.trim() !== '';
 const isShort = (value) => value.trim() !== '' && value.length > 10;
@@ -59,7 +58,7 @@ const AddItem = (props) => {
       title: titleValue,
       description: descriptionValue,
       price: priceValue,
-      image: image
+      image: imageValue
     }
     setItems(prevState => [...prevState, item])
     navigate('/');
@@ -103,7 +102,7 @@ const AddItem = (props) => {
           />
           {descriptionHasError && <p className={classes.errorText}>Please enter a description.</p>}
         </div>
-      </div>
+    
       <div className={priceClasses}>
         <label htmlFor='name'>Price</label>
         <input
@@ -123,9 +122,10 @@ const AddItem = (props) => {
           value={imageValue}
           onChange={imageChangeHandler}
           onBlur={imageBlurHandler}
-          accept="image/*"
+          // accept="image/*"
         />
         {imageHasError && <p className={classes.errorText}>Please import an image</p>}
+      </div>
       </div>
       <div className={classes.formActions}>
         <button disabled={!formIsValid}>Submit</button>

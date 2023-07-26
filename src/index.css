@@ -35,7 +35,7 @@ body {
 	transition: transform 0.3s;
 }
 .product img:hover {
-	transform: scale(1.05);
+	transform: scale(1.08);
 }
 .product .price {
 	font-size: 20px;
@@ -59,17 +59,17 @@ body {
 	border-radius: 5px;
 	margin-left: 1rem;
 	margin-bottom: 1rem;
-	;
 	color: #292929;
 	font-size: 0.8rem;
+	transition: transform 0.2s;
 }
 
 .button:hover,
 .button:active {
 	background-color: #aa3333;
 	border-color: #aa3333;
-	;
 	color: white;
+	transform: scale(1.02);
 }
 
 .buttons {

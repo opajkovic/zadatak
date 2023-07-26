@@ -6,7 +6,7 @@ import Loader from './Loader';
 const ProductItem = () => {
   const id = useParams().id;
   const { items } = useContext(ProductContext);
-  const item = items[id];
+  const item = items[id-1];
   if (!item?.images.length) return <Loader />;
   return (
     <>
@@ -14,7 +14,6 @@ const ProductItem = () => {
       <div className='container products'>
         {item.images.slice(0, 3).map((image, index) => (
           <div className="product" key={index}>
-
             <img src={`${image}`} alt={`${item.title}`} />
           </div>))}
       </div>

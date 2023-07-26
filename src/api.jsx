@@ -18,12 +18,15 @@ const deleteItem = async () => {
    return res.json()
  }
 
- const editItem = async (id) => {
+ const editItem = async (id, item) => {
   let res = await fetch('https://dummyjson.com/products/id', {
     method: 'PUT', 
     headers: { 'Content-Type': 'application/json' },
     body: JSON.stringify({
-      title: 'iPhone Galaxy +1'
+      id: id,
+      title: item.title,
+      description: item.description,
+      price: item.price
     })
   })
   return res.json();
